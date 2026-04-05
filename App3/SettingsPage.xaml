@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="App3.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:App3"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+        <StackPanel Padding="30"
+                    Spacing="15">
+                <TextBlock Text="启动器设置"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Margin="0,0,0,20" />
+
+                <!-- Java 设置 -->
+                <TextBlock Text="Java 运行环境 (JRE) 路径"
+                           FontSize="16"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="如果列表为空，请尝试手动浏览 javaw.exe。"
+                           FontSize="12"
+                           Foreground="Gray"
+                           Margin="0,-10,0,0" />
+
+                <Grid ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400" />
+                                <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox x:Name="JavaComboBox"
+                                  Grid.Column="0"
+                                  HorizontalAlignment="Stretch"
+                                  PlaceholderText="请选择 Java 路径..."
+                                  SelectionChanged="JavaComboBox_SelectionChanged" />
+
+                        <Button x:Name="BrowseJavaButton"
+                                Grid.Column="1"
+                                Content="手动浏览..."
+                                Click="BrowseJavaButton_Click" />
+
+                </Grid>
+                
+                <!-- 内存设置 -->
+                <StackPanel Spacing="8">
+                        <TextBlock x:Name="RamLabel"
+                                   Text="分配内存:"
+                                   FontSize="16"
+                                   FontWeight="SemiBold" />
+                        <Grid ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65" />
+                                        <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <NumberBox x:Name="RamInput"
+                                           Grid.Column="0"
+                                           Minimum="1024"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"   
+                                           SpinButtonPlacementMode="Hidden"
+                                           Width="65"
+                                           ValueChanged="RamInput_ValueChanged" />
+                                <TextBlock Grid.Column="1"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Foreground="LightGray"
+                                           Text="MB"
+                                           FontSize="16"
+                                           FontWeight="SemiBold" />
+
+                        </Grid>
+                        <Slider x:Name="RamSlider"
+                                Minimum="1024"
+                                Maximum="8192"
+                                StepFrequency="512"
+                                TickFrequency="1024"
+                                TickPlacement="BottomRight"
+                                Width="400"
+                                HorizontalAlignment="Left"
+                                ValueChanged="RamSlider_ValueChanged" />
+                </StackPanel>
+        </StackPanel>
+</Page>

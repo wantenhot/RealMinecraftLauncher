@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="App3.InstallPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid Padding="24">
+                <TextBlock Text="安装我的世界"
+                         FontSize="24"
+                         FontWeight="SemiBold"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top" />
+                
+
+                <Pivot Margin="0,60,0,0">
+                        <PivotItem Header="版本">
+                                <Grid Margin="0,24,0,0">
+                                        <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="250" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ListView x:Name="VersionListName"
+                                                  Grid.Column="0"
+                                                  SelectionMode="Single"
+                                                  Margin="0,0,24,0"
+                                                  IsItemClickEnabled="True"
+                                                  ItemClick="VersionListName_ItemClick">
+
+                                                <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                                <StackPanel Orientation="Horizontal"
+                                                                            Padding="12,8">
+                                                                        <TextBlock Text="{Binding VersionName}"
+                                                                                   FontWeight="SemiBold"
+                                                                                   FontSize="16"
+                                                                                   Width="150" />
+                                                                        <TextBlock Text="{Binding VersionType}"
+                                                                                   Foreground="Gray"
+                                                                                   VerticalAlignment="Center" />
+                                                                </StackPanel>
+                                                        </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                        </ListView>
+                                        
+
+                                </Grid>
+                                
+                        </PivotItem>
+
+                        
+                        
+                        
+                        
+                </Pivot>
+
+        </Grid>
+</Page>

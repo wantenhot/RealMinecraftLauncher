@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="App3.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:App3"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+        <Grid Padding="24">
+
+                <TextBlock x:Name="page_title"
+                           Text="登录"
+                           FontSize="24"
+                           FontWeight="SemiBold" />
+
+
+
+                <!--使用从左到有的排列盘-->
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="50,100,0,0"
+                            Spacing="30">
+                        <TextBox x:Name="InputBox"
+                                 Header="账号名称"
+                                 PlaceholderText="输入你想要的账号名称"
+                                 Width="300" />
+
+                        <ComboBox x:Name="RoleSelector"
+                                  Header="版本"
+                                  PlaceholderText="点击这里选择..."
+                                  Width="140">
+
+
+                        </ComboBox>
+                </StackPanel>
+                <Button x:Name="LaunchButton"
+                        Content="启动游戏"
+                        Width="60"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="170,190,0,0"
+                        Click="LaunchButton_Click" />
+
+        </Grid>
+</Page>
