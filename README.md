@@ -1,1 +1,2 @@
-# Thats terrible
+# 一个使用WinUI 3制作的我的世界启动器
+目前只有基础功能
